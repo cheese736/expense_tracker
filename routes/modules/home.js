@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const Resto = require('../../models/restaurant')
+// const Resto = require('../../models/restaurant')
 
 router.get('/', (req, res) => {
   res.render('index')
