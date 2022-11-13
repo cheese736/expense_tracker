@@ -9,6 +9,13 @@ router.get('/login', (req, res) => {
   res.render('login')
 })
 
+// POST 登入頁
+router.post('/login', passport.authenticate('local', {
+  successRedirect: '/',
+  failureRedirect: '/users/login',
+  failureFlash: true
+}))
+
 //  GET 註冊頁
 router.get('/register', (req, res) => {
   res.render('register')
