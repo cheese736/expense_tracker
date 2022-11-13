@@ -2,16 +2,6 @@ const mongoose = require('mongoose')
 const autoIncrement = require('mongoose-auto-increment')
 const db = mongoose.connection
 
-mongoose.connect(process.env.MONGODB2_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-
-
-db.on('error', () => {
-  console.log('mongodb error!')
-})
-db.once('open', () => {
-  console.log('mongodb connected!')
-})
-
 autoIncrement.initialize(db)
 // --------------------------------------------
 
@@ -47,7 +37,7 @@ recordSchema.plugin(autoIncrement.plugin, {
 
 const Record = mongoose.model('Record', recordSchema)
 
-Record.create({name: 'test' ,email: 'test', password: 'test'})
+// Record.create({name: 'test' ,email: 'test', password: 'test'})
 
 
 

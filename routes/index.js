@@ -16,5 +16,5 @@ router.use('/users', users)
 router.use('/records', records)
 // router.use('/search', authenticator, search)
 // router.use('/auth', auth)
-router.use('/', home)
-module.exports = router
+router.use('/',authenticator, home)
+module.exports = router 

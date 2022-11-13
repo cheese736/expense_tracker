@@ -3,11 +3,11 @@ header {
 }
 
 body {
-  background-color: rgb(178, 206, 234);
+  background-color: rgb(226, 230, 234);
 }
 
 .navbar .navbar-brand {
-  color: #4592af;
+  color: #366dd3;
 }
 
 .navbar .navbar-brand:hover {
