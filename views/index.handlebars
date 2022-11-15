@@ -23,13 +23,19 @@
   </div>
   <table class="table table-striped table-hover">
     <thead>
-
+      <td>img</td>
+      <td>name</td>
+      <td>expense</td>
+      <td></td>
+      <td></td>
     </thead>
     <tbody>
+      {{#each modifiedRecords}}
       <tr>
-        <td>img</td>
-        <td>catagory</td>
-        <td>expense</td>
+        <td><i class="fa-solid fa-house"></i></td>
+        <td>{{this.name}} {{this.date}}</td>
+        
+        <td>{{this.amount}}</td>
         <td>
           <button>
             <a href="">
@@ -45,6 +51,7 @@
           </button>
         </td>
       </tr>
+      {{/each}}
     </tbody>
   </table>
 </div>
