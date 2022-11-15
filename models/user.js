@@ -18,7 +18,8 @@ const userSchema = new mongoose.Schema(
 
 userSchema.plugin(autoIncrement.plugin, {
     model: 'User',
-    field: '_id'
+    field: '_id',
+    startAt: 1
 });
 
 module.exports = mongoose.model('User', userSchema)

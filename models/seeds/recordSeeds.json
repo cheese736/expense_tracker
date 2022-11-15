@@ -1,0 +1,72 @@
+[
+  {
+    "name": "午餐",
+    "date": "2019/4/23",
+    "amount": "100",
+    "userId": 1,
+    "categoryId": 4
+  },
+  {
+    "name": "晚餐",
+    "date": "2019/4/23",
+    "amount": "100",
+    "userId": 1,
+    "categoryId": 4
+  },
+  {
+    "name": "捷運",
+    "date": "2019/4/23",
+    "amount": "100",
+    "userId": 1,
+    "categoryId": 2
+  },
+  {
+    "name": "電影: 驚奇隊長",
+    "date": "2019/4/24",
+    "amount": "300",
+    "userId": 1,
+    "categoryId": 3
+  },
+  {
+    "name": "租金",
+    "date": "2019/4/24",
+    "amount": "8000",
+    "userId": 1,
+    "categoryId": 1
+  },
+  {
+    "name": "午餐",
+    "date": "2019/4/23",
+    "amount": "100",
+    "userId": 1,
+    "categoryId": 4
+  },
+  {
+    "name": "晚餐",
+    "date": "2019/4/23",
+    "amount": "100",
+    "userId": 2,
+    "categoryId": 4
+  },
+  {
+    "name": "捷運",
+    "date": "2019/4/23",
+    "amount": "100",
+    "userId": 2,
+    "categoryId": 2
+  },
+  {
+    "name": "電影: 驚奇隊長",
+    "date": "2019/4/24",
+    "amount": "300",
+    "userId": 2,
+    "categoryId": 3
+  },
+  {
+    "name": "租金",
+    "date": "2019/4/24",
+    "amount": "8000",
+    "userId": 2,
+    "categoryId": 1
+  }
+]

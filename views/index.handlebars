@@ -1,16 +1,24 @@
 
-<div class="p-5">
-  <div class="dropdown my-5">
-    <button class="btn btn-secondary col-12 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-      類別
-    </button>
-    <ul class="dropdown-menu col-12">
-      <li><a class="dropdown-item" href="#">Action</a></li>
-      <li><a class="dropdown-item" href="#">Another action</a></li>
-      <li><a class="dropdown-item" href="#">Something else here</a></li>
-    </ul>
+<div class="container w-50" style="margin-top: 100px ;">
+  <div class="row">
+    <div class="col-10 dropdown">
+      <button class="btn btn-major dropdown-toggle col-12" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        類別
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </div>
+    <div class="col-2 text-end">
+      <a class="btn btn-sm btn-major" href="/records/new" >
+        新增支出紀錄
+      </a>
+    </div>
   </div>
-  <div class="my-5">
+
+  <div>
     總金額
   </div>
   <table class="table table-striped table-hover">
@@ -22,8 +30,20 @@
         <td>img</td>
         <td>catagory</td>
         <td>expense</td>
-        <td><button>edit</button></td>
-        <td><button>delete</button></td>
+        <td>
+          <button>
+            <a href="">
+              Edit
+            </a>
+          </button>
+        </td>
+        <td>
+          <button>
+            <a href="">
+              Delete
+            </a>
+          </button>
+        </td>
       </tr>
     </tbody>
   </table>

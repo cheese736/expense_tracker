@@ -13,14 +13,12 @@ const recordSchema = new mongoose.Schema(
     date: {type: Date, required: true},
     amount: {type: Number, required: true},
     userId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'User',
+      type: Number,
       index: true,
       required: true
     },
     categoryId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Category',
+      type: Number,
       index: true,
       required: true
     }
@@ -31,13 +29,13 @@ const recordSchema = new mongoose.Schema(
 )
 
 recordSchema.plugin(autoIncrement.plugin, {
-    model: 'User',
-    field: '_id'
+    model: 'Record',
+    field: '_id',
+    startAt: 1
 });
 
-const Record = mongoose.model('Record', recordSchema)
+module.exports = mongoose.model('Record', recordSchema)
 
-// Record.create({name: 'test' ,email: 'test', password: 'test'})
 
 
 

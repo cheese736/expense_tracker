@@ -11,14 +11,14 @@
       <tbody>
         <tr>
           <td>名稱*:</td>
-          <td><input class="form-control" type="text"></td>
+          <td><input class="form-control" type="text" name="name"></td>
         </tr>
         
         <tr>
           <td>日期*:</td>
           <td>
             <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker" inline="true">
-              <input placeholder="Select date" type="text" id="example" class="form-control">
+              <input placeholder="Select date" type="text" id="example" class="form-control" name="date">
               <label for="example">Try me...</label>
               <i class="fas fa-calendar input-prefix"></i>
             </div>
@@ -28,11 +28,11 @@
         <tr>
           <td>類別*:</td>
           <td>    
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" aria-label="Default select example" name="category">
               <option selected>Open this select menu</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+              {{#each categories}}
+              <option value={{this._id}}>{{this.name}}</option>
+              {{/each}}
             </select>
           </td>
 
@@ -40,7 +40,7 @@
 
         <tr>
           <td>金額*:</td>
-          <td><input class="form-control" type="text" ></td>
+          <td><input class="form-control" type="text" name="amount"></td>
         </tr>
 
         <tr>

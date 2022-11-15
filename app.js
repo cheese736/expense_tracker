@@ -9,7 +9,6 @@ if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
 
-
 // import files
 const usePassport = require('./config/passport')
 const routes = require('./routes')
@@ -29,14 +28,15 @@ app.set('view engine', 'handlebars')
 
 app.use(express.urlencoded({ extended: true }))  //It parses incoming requests with urlencoded payloads
 app.use(methodOverride('_method'))
+
+// use static files
+app.use(express.static('public'))
+
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: true
 }))
-// use static files
-app.use(express.static('public'))
-
 
 usePassport(app)
 app.use(flash())

@@ -1,15 +1,37 @@
 const express = require('express')
 const router = express.Router()
 const Record = require('../../models/record')
+const Category = require('../../models/category')
+
 
 // 進入餐廳新增頁面
 router.get('/new', (req, res) => {
-  res.render('new')
+  // 
+  Category.find().lean()
+  .then(categories => {
+    res.render('new', {categories})
+  })
 })
 
 // 新增一筆資料
-router.post('/new', (req, res) => {
+router.post('/', (req, res) => {
+  const userId = req.user._id
+  const [name, date, categoryId, amount] =
+  [
+    req.body.name,
+    new Date(req.body.date),
+    Number(req.body.category),
+    Number(req.body.amount)
+  ]
+
+  Record.create({
+    name, date, categoryId, amount, userId
+  })
+  .then(() => res.redirect('/'))
+  .catch(err => console.log(err))
 })
+
+
 // 進入搜尋結果
 router.get('/search', (req, res) => {
 })
@@ -18,11 +40,7 @@ router.get('/search', (req, res) => {
 router.delete('/:id', (req, res) => {
 })
 
-// 進入餐廳詳細資料
-router.get('/:id', (req, res) => {
-})
-
-// 進入餐廳編輯頁面
+// 進入編輯頁面
 
 router.get('/:id/edit', (req, res) => {
 })

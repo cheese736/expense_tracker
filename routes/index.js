@@ -13,7 +13,7 @@ const auth = require('./modules/auth')
 const { authenticator } = require('../middleware/auth')
 
 router.use('/users', users)
-router.use('/records', records)
+router.use('/records',authenticator ,records)
 // router.use('/search', authenticator, search)
 router.use('/auth', auth)
 router.use('/',authenticator, home)
