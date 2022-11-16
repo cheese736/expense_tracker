@@ -23,8 +23,6 @@ console.log(images[0].fascode)
 
 
 router.get('/', (req, res) => {
-
-  
   async function renderHome() {
     const userId = req.user._id
     const categories = await Category.find().lean().sort({_id: 'asc'})
@@ -35,8 +33,13 @@ router.get('/', (req, res) => {
       record.fascode = images.find(img => img.categoryId === record.categoryId).fascode
       return record
     })
+
+    // 處理總開銷
+    let totalAmount = 0
+    records.forEach(record => totalAmount += record.amount)
+    console.log(`totalAmount: ${totalAmount}`)
     console.log(records)
-    res.render('index',{categories, modifiedRecords})
+    res.render('index',{categories, modifiedRecords, totalAmount})
   }
   renderHome()
 })
