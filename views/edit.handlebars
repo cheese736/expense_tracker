@@ -1,6 +1,6 @@
 
 <div style="width:fit-content; margin:auto; margin-top:100px;">
-  <form action="">
+  <form action="/records/{{ record._id }}?_method=PUT" method="POST">
     <table class="table table-striped table-hover">
         <thead>
           <tr>
@@ -11,29 +11,31 @@
       <tbody>
         <tr>
           <td>名稱*:</td>
-          <td><input type="text"></td>
+          <td><input class="form-control" type="text" name="name" value={{record.name}} required></td>
         </tr>
         
         <tr>
           <td>日期*:</td>
           <td>
-            <div class="input-group date" id='date1'>
-              <input type="text" class="form-control" />
-              <span class="input-group-addon">
-              <i class="glyphicon glyphicon-calendar"></i>
-              </span>
+            <div class="row form-group">
+                <div class="col">
+                    <div class="input-group date" id="datepicker">
+                        <input type="date" class="form-control" name="date" value={{record.date}} required>
+                    </div>
+                </div>
             </div>
           </td>
         </tr>
 
+
         <tr>
           <td>類別*:</td>
           <td>    
-            <select class="form-select" aria-label="Default select example">
-              <option selected>Open this select menu</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+            <select class="form-select" aria-label="Default select example" name="category">
+              <option selected value={{record.categoryId}}>{{record.category}}</option>
+              {{#each categories}}
+              <option value={{this._id}}>{{this.name}}</option>
+              {{/each}}
             </select>
           </td>
 
@@ -41,12 +43,11 @@
 
         <tr>
           <td>金額*:</td>
-          <td><input type="text"></td>
+          <td><input class="form-control" type="text" name="amount" required value={{record.amount}}></td>
         </tr>
 
         <tr>
-          <td></td>
-          <td><button class="btn btn-success" type="submit">Submit</button></td>
+          <td colspan="2" class="text-center"><button class="btn col-12" type="submit">提交修改</button></td>
         </tr>
       </tbody>
     </table>

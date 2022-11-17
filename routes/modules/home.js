@@ -19,7 +19,6 @@ router.get('/', (req, res) => {
     const modifiedRecords = records.map(record => {
       record.date = record.date.toISOString().split('T')[0]
       record.fascode = images.find(img => img.categoryId === record.categoryId).fascode
-      console.log(record)
       return record
     })
     
