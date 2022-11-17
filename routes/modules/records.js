@@ -19,7 +19,7 @@ router.post('/', (req, res) => {
   const [name, date, categoryId, amount] =
   [
     req.body.name,
-    new Date(req.body.date),
+    req.body.date,
     Number(req.body.category),
     Number(req.body.amount)
   ]
@@ -32,12 +32,19 @@ router.post('/', (req, res) => {
 })
 
 
-// 進入搜尋結果
-router.get('/search', (req, res) => {
+// 進入篩選結果結果
+router.get('/filter/:categoryId', (req, res) => {
+
 })
 
 // 刪除一筆資料
 router.delete('/:id', (req, res) => {
+  console.log(req.params)
+  const id = req.params.id
+  return Record.findById(id)
+    .then(record => record.remove())
+    .then(() => res.redirect('/'))
+    .catch(err => console.log(err))
 })
 
 // 進入編輯頁面

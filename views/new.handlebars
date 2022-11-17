@@ -11,16 +11,18 @@
       <tbody>
         <tr>
           <td>名稱*:</td>
-          <td><input class="form-control" type="text" name="name"></td>
+          <td><input class="form-control" type="text" name="name" required></td>
         </tr>
         
         <tr>
           <td>日期*:</td>
           <td>
-            <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker" inline="true">
-              <input placeholder="Select date" type="text" id="example" class="form-control" name="date">
-              <label for="example">Try me...</label>
-              <i class="fas fa-calendar input-prefix"></i>
+            <div class="row form-group">
+                <div class="col">
+                    <div class="input-group date" id="datepicker">
+                        <input type="date" class="form-control" name="date" required>
+                    </div>
+                </div>
             </div>
           </td>
         </tr>
@@ -28,8 +30,8 @@
         <tr>
           <td>類別*:</td>
           <td>    
-            <select class="form-select" aria-label="Default select example" name="category">
-              <option selected>Open this select menu</option>
+            <select class="form-select" aria-label="Default select example" name="category" required>
+              <option selected value="">Open this select menu</option>
               {{#each categories}}
               <option value={{this._id}}>{{this.name}}</option>
               {{/each}}
@@ -40,7 +42,7 @@
 
         <tr>
           <td>金額*:</td>
-          <td><input class="form-control" type="text" name="amount"></td>
+          <td><input class="form-control" type="text" name="amount" required></td>
         </tr>
 
         <tr>
@@ -52,9 +54,18 @@
   </form>
 </div>
 
-<script>
+{{!-- <script>
   // Data Picker Initialization
-  $('.datepicker').datepicker({
-    inline: true
-  });
-</script>
+  $('#datepicker').datepicker({
+    format: 'yyyy-mm-dd'
+  })
+
+  $('#datepicker').submit(() => {
+    if ($('#assettype').val() != '')) {  //Check the value of select
+      return true; //allow to submit the form
+    } else {       
+      alert("Please select an date");
+      return false;  //Prevent form being submitted
+    }
+  }); 
+</script> --}}
