@@ -21,8 +21,13 @@ const recordSchema = new mongoose.Schema(
       type: Number,
       index: true,
       required: true
+    },
+    createdAt: {
+      type: Date,
+      default: Date.now
     }
   }, 
+  
   {
     versionKey: false,
   }
